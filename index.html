@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>singIn</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+<body>
+    <div>
+    <div class="container">
+            <h1>singIn form</h1></br>
+            <div class="GroBtn">
+              <form action="function.php" method="post">
+               <table>
+                   <tr>
+                       <td class="hemu">singIn</td>
+                   </tr>
+                   <tr>
+                       <td>Username:</td>
+                       <td><input type="text" name="Username" required/></td>
+                   </tr>
+                   <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="Email" required/></td>
+                </tr>
+                   <tr>
+                      <td>Password:</td>
+                      <td><input type="text" name="password" required/></td>
+                    </tr>
+                    <tr>
+                        <td>gender:</td>
+                        <td><input type="radio" name="gender"  value="male" required />Male
+                            <input type="radio" name="gender" value="female" required />Female
+                            <input type="radio" name="gender" value="others" required />Others
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>branch:</td>
+                        <td>
+                        <br><input type="radio" name="branch"  value="cse" required />cse</br>
+                         <br><input type="radio" name="branch" value="ece" required />ece</br>
+                         <br><input type="radio" name="branch" value="eee" required />eee</br>
+                         <br><input type="radio" name="branch"  value="mech" required />mech</br>
+                         <br><input type="radio" name="branch" value="civil" required />civil</br>
+                         </td>
+                    </tr>
+                      <tr>
+                          <td>section:</td>
+                          <td><input type="text" name="section" required /></td>
+                      </tr>
+                    <tr>
+                        <td>Roll Number:</td>
+                        <td><input type="text" name="Roll Number" required/></td>
+                    </tr>
+                    <tr>
+                        <td>MSG:</td>
+                        <td><input type="text" name="MSG" required/></td>
+                    </tr>
+                    <div class="kallu">
+                    <tr>
+                        <td><input type="submit" name="submit" value="submit" class= required /></td>
+                    </tr>
+                </table>
+
+             </form>
+             <?php
+    include "config.php";
+    $sql = "SELECT * FROM user ORDER BY id DESC";
+    $result = mysqli_query($conn, $sql) or die("Query Failed!");
+?>
+
+<?php if(mysqli_num_rows($result) > <br><br><br><br><br>
+
+<div class="container1">
+  <h2></h2>
+ 
+  <table class="table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>gender</th>
+            <th>branch</th>
+            <th>section</th>
+            <th>Roll Number</th>
+            <th>MSG</th>
+           
+            
+           
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
+        <tr>
+         <td><?php echo $row['Username']; ?></td>
+         <td><?php echo $row['Email']; ?></td>
+         <td><?php echo $row['Password']; ?></td>
+         <td><?php echo $row['gender'] ?></td>
+         <td><?php echo $row['branch'] ?></td>
+         <td><?php echo $row['section']; ?></td>
+         <td><?php echo $row['Roll Number']; ?></td>
+         <td><?php echo $row['MSG'];  ?></td>   
+        </tr>
+
+                
+            
+    
+ 
+             
+         </div>
+        </div>
+    </div>
+</body>
+</html>
